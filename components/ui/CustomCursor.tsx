@@ -9,7 +9,7 @@ export default function CustomCursor() {
   const [isHovering, setIsHovering] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
 
-  const springConfig = { stiffness: 120, damping: 18 }
+  const springConfig = { stiffness: 500, damping: 30, mass: 0.5 }
   const x = useSpring(cursorX, springConfig)
   const y = useSpring(cursorY, springConfig)
 

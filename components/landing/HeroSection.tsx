@@ -98,7 +98,7 @@ export default function HeroSection() {
         className="font-dm-sans text-section-label tracking-section uppercase mb-10"
         style={{ color: 'var(--text-secondary)' }}
       >
-        A new way to discover demi-fine jewellery — launching soon.
+        A new way to discover jewellery online — launching soon.
       </motion.p>
 
       {/* Email Form */}
