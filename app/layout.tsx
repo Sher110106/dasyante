@@ -3,6 +3,7 @@ import { cormorant, dmSans } from '@/lib/fonts'
 import './globals.css'
 import CustomCursor from '@/components/ui/CustomCursor'
 import GrainOverlay from '@/components/ui/GrainOverlay'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
   title: 'Dasyante — Coming Soon',
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en" className={`${cormorant.variable} ${dmSans.variable}`}>
       <body className="antialiased">
         {children}
+        <Analytics />
         <CustomCursor />
         <GrainOverlay />
       </body>
