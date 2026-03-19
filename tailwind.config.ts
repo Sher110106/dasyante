@@ -10,15 +10,19 @@ const config: Config = {
     extend: {
       colors: {
         'bg-primary': 'var(--bg-primary)',
-        'bg-surface': 'var(--bg-surface)',
+        'bg-secondary': 'var(--bg-secondary)',
+        'bg-tertiary': 'var(--bg-tertiary)',
         'text-primary': 'var(--text-primary)',
         'text-secondary': 'var(--text-secondary)',
         'text-tertiary': 'var(--text-tertiary)',
         'accent-gold': 'var(--accent-gold)',
-        'accent-gold-dim': 'var(--accent-gold-dim)',
+        'accent-gold-light': 'var(--accent-gold-light)',
+        'accent-gold-dark': 'var(--accent-gold-dark)',
         'border-subtle': 'var(--border-subtle)',
-        'border-focus': 'var(--border-focus)',
-        'error-amber': 'var(--error-amber)',
+        'border-medium': 'var(--border-medium)',
+        'border-dark': 'var(--border-dark)',
+        'error-red': 'var(--error-red)',
+        'success-green': 'var(--success-green)',
       },
       fontFamily: {
         lovelo: ['Lovelo', 'Arial Black', 'sans-serif'],

@@ -15,16 +15,25 @@
 }
 
 :root {
-  --bg-primary:       #0A0A0A;
-  --bg-surface:       #111010;
-  --text-primary:     #F5F0EB;
-  --text-secondary:   #7A7470;
-  --text-tertiary:    #3D3835;
-  --accent-gold:      #C9A96E;
-  --accent-gold-dim:  #C9A96E18;
-  --border-subtle:    #1E1C1A;
-  --border-focus:     #C9A96E55;
-  --error-amber:      #8B5A2B99;
+  /* Light Luxury Theme - Cartier Inspired */
+  --bg-primary:       #FFFFFF;
+  --bg-secondary:     #F8F8F6;     /* Warm off-white for sections */
+  --bg-tertiary:      #F5F5F3;     /* Subtle variation */
+
+  --text-primary:     #1A1A1A;     /* Near black */
+  --text-secondary:   #6B6B6B;     /* Medium grey */
+  --text-tertiary:    #999999;     /* Light grey */
+
+  --accent-gold:      #C9A96E;     /* Keep gold accent */
+  --accent-gold-light: #E8D9BE;    /* Lighter gold variant */
+  --accent-gold-dark: #B08D5B;     /* Darker gold for hover */
+
+  --border-subtle:    #E5E5E5;     /* Light borders */
+  --border-medium:    #CCCCCC;
+  --border-dark:      #999999;
+
+  --error-red:        #C74343;     /* Clean red for errors */
+  --success-green:    #4A8B6F;
 }
 
 * {
@@ -35,14 +44,16 @@
 
 html {
   height: 100%;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 body {
-  background: var(--bg-primary);
+  background-color: #FFFFFF;
   color: var(--text-primary);
   min-height: 100dvh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto; /* Enable vertical scrolling for multi-page site */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

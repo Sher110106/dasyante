@@ -79,9 +79,9 @@ export default function CustomCursor() {
         animate={{
           width: isHovering ? 28 : 6,
           height: isHovering ? 28 : 6,
-          backgroundColor: isHovering ? 'transparent' : 'rgba(201, 169, 110, 0.8)',
-          borderColor: isHovering ? 'rgba(201, 169, 110, 0.8)' : 'transparent',
-          borderWidth: isHovering ? 1.5 : 0,
+          backgroundColor: isHovering ? 'transparent' : '#B08D5B', // Darker gold for light theme
+          borderColor: isHovering ? '#B08D5B' : 'transparent', // Darker gold border
+          borderWidth: isHovering ? 2 : 0,
         }}
         transition={{ duration: 0.2, ease: 'easeOut' }}
         className="rounded-full"
