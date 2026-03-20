@@ -40,7 +40,10 @@ function ContactForm() {
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nTopic: ${form.topic}\n\n${form.message}`
     )
-    window.open(`mailto:help@dasyante.com?subject=${subject}&body=${body}`, '_blank')
+    const mailtoLink = `mailto:help@dasyante.com?subject=${subject}&body=${body}`
+    const a = document.createElement('a')
+    a.href = mailtoLink
+    a.click()
 
     setResult({
       success: true,
