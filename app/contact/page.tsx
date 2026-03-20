@@ -43,7 +43,10 @@ function ContactForm() {
     const mailtoLink = `mailto:help@dasyante.com?subject=${subject}&body=${body}`
     const a = document.createElement('a')
     a.href = mailtoLink
+    a.style.display = 'none'
+    document.body.appendChild(a)
     a.click()
+    document.body.removeChild(a)
 
     setResult({
       success: true,
