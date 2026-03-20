@@ -91,7 +91,7 @@ const cardVariants = {
 
 export default function EntryPaths() {
   return (
-    <section className="py-20 md:py-28 bg-bg-primary">
+    <section className="py-20 md:py-28 bg-bg-primary border-t border-border-subtle">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10"

@@ -26,8 +26,8 @@ export default function Button({
   const baseStyles = 'inline-flex items-center justify-center font-dm-sans uppercase tracking-btn transition-all duration-300 relative overflow-hidden'
 
   const variantStyles = {
-    solid: 'bg-accent-gold text-white hover:bg-accent-gold-dark',
-    ghost: 'bg-transparent text-accent-gold border-2 border-accent-gold hover:bg-accent-gold hover:text-white',
+    solid: 'bg-transparent text-text-primary border border-border-subtle hover:border-accent-gold hover:text-accent-gold',
+    ghost: 'bg-transparent text-accent-gold border border-accent-gold hover:bg-accent-gold hover:text-bg-primary',
   }
 
   const sizeStyles = {

@@ -17,7 +17,7 @@ export default function CareersPage() {
       </section>
 
       {/* Who we are */}
-      <section className="py-20 md:py-28 bg-bg-secondary">
+      <section className="py-20 md:py-28 bg-bg-tertiary">
         <div className="max-w-4xl mx-auto px-6 md:px-10">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div className="space-y-6">
@@ -64,7 +64,7 @@ export default function CareersPage() {
       </section>
 
       {/* Speculative application */}
-      <section className="py-20 md:py-28 bg-bg-secondary">
+      <section className="py-20 md:py-28 bg-bg-tertiary">
         <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
           <h2 className="font-cormorant text-3xl md:text-4xl text-text-primary mb-6">
             Think you belong here anyway?

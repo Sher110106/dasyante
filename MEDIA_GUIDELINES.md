@@ -1,273 +1,81 @@
-# Media Asset Guidelines for Dasyante
+# Dasyante — Media Guidelines
 
-This document outlines the ideal media assets for each placeholder in the Dasyante website. Replace these placeholders with high-quality, professionally shot content that aligns with our luxury brand aesthetic.
-
----
-
-## Current Placeholders
-
-### 1. `/public/IMG_5181.jpg` (Static Image)
-**Current Usage:** Hero background, collection covers, product images, philosophy section, brand logos
-
-### 2. `/public/4910096-hd_1920_1080_30fps.mp4` (Video)
-**Current Usage:** Video showcase section on homepage
+All current placeholders use `/IMG_5181.jpg` and the brand video.
+Replace each slot with the recommended shot type below.
 
 ---
 
-## Detailed Replacement Guidelines
+## 1. Hero — Orbital Carousel (`components/home/OrbitalCarousel.tsx`)
 
-### Hero Section (`components/home/Hero.tsx`)
-**Current:** `/IMG_5181.jpg`
+8 cards orbit the center text. Replace each `src` in the `ITEMS` array.
 
-**Ideal Replacement:**
-- **Type:** High-resolution photograph (minimum 2400x1350px)
-- **Subject:** Close-up of jewellery in a lifestyle context
-  - Examples: Hands wearing rings naturally, necklace on a model in soft lighting, earrings in an editorial setup
-- **Mood:** Elegant, cinematic, slightly moody
-- **Lighting:** Natural or studio lighting with soft shadows
-- **Color Palette:** Warm tones, muted backgrounds to allow white text overlay
-- **Composition:** Center-focused with negative space for text overlay
-- **Style:** Editorial fashion photography, not e-commerce catalog shots
-- **Avoid:** Busy backgrounds, harsh lighting, overly product-focused shots
+| Slot | Type | Recommended Shot | Mood |
+|------|------|-----------------|------|
+| 0 | Image | Close-up of a sterling silver ring on fingertip | Intimate, textured |
+| 1 | Image | Layered silver chain necklace against bare skin | Minimal, tonal |
+| 2 | **Video** | Short loop of a silver bangle being worn / moving | Kinetic, aspirational |
+| 3 | Image | Architectural silver earring, clean dark background | Editorial |
+| 4 | Image | Flat lay of 3 silver pieces on dark stone surface | Still life |
+| 5 | Image | Hand wearing multiple rings, soft warm light | Lifestyle |
+| 6 | Image | Portrait — woman in silver choker, looking away | Character-led |
+| 7 | Image | Macro of hallmark / silver surface texture | Craft, detail |
 
----
-
-### Collection Cover Images (`lib/mockData.ts` - `coverImage` fields)
-**Current:** `/IMG_5181.jpg` (used for all 4 collections)
-
-**Ideal Replacement (4 unique images needed):**
-
-#### Collection 1: "Quiet Gold for Everyday Identity"
-- **Subject:** Minimal gold jewellery worn in a daily context (coffee shop, workspace, natural setting)
-- **Mood:** Effortless, understated, lived-in elegance
-- **Example:** Close-up of hands with thin band rings, shot in natural light
-
-#### Collection 2: "Statement Pieces for Considered Moments"
-- **Subject:** Bold, sculptural jewellery on a model or styled dramatically
-- **Mood:** Confident, striking, memorable
-- **Example:** Large cuff bracelet or statement earrings with dramatic lighting
-
-#### Collection 3: "Fusion: Where Tradition Meets Now"
-- **Subject:** Contemporary jewellery with cultural motifs in a modern setting
-- **Mood:** Bridging heritage and modernity
-- **Example:** Lotus-inspired earrings on a model in contemporary clothing
-
-#### Collection 4: "Gifts That Won't Be Forgotten"
-- **Subject:** Jewellery in a gifting context (elegant packaging, hands exchanging a piece)
-- **Mood:** Thoughtful, intimate, meaningful
-- **Example:** Beautifully wrapped jewellery box or hands holding a delicate piece
-
-**Specifications:**
-- Aspect ratio: 3:4 (vertical/portrait)
-- Minimum resolution: 1200x1600px
-- Format: JPG or WebP
-- File size: Keep under 500KB for web performance
+**Image specs:** JPG or WebP · ~300×400px portrait (component crops) · sRGB
+**Video (slot 2):** MP4 H.264 · 8–15s seamless loop · muted autoplay · min 720×960px
+**Tip:** Dark or warm mid-tone backgrounds read best against `#0F0F0F`
 
 ---
 
-### Product Images (`lib/mockData.ts` - `images` fields)
-**Current:** `/IMG_5181.jpg` (used for all products)
+## 2. Works Grid — "Begin the Journey" (`components/home/WorksGrid.tsx`)
 
-**Ideal Replacement (5 products x 2-3 images each = 10-15 unique images):**
+4 full-bleed editorial images. Most prominent images on the site.
 
-#### For Each Product:
-1. **Main Image:** Clean product shot on neutral background
-   - White or light grey background
-   - Professional lighting showing texture and detail
-   - Square aspect ratio (1:1)
-   - Minimum 1200x1200px
+| Slot | Title | Subtitle | Recommended Shot |
+|------|-------|----------|-----------------|
+| 0 | Sculptural Silver | She grew up around tradition | Woman in traditional Indian setting wearing heavy silver |
+| 1 | Everyday Layers | She chooses what feels like her | Modern woman with layered silver chains and a blazer |
+| 2 | Soft Minimal | But her life today is different | Soft side-lit portrait, single minimal silver piece |
+| 3 | Statement Silence | Jewellery that moves with her | Motion shot — silver cuff or earrings mid-movement |
 
-2. **Lifestyle Image:** Product worn/styled in context
-   - Model wearing the piece naturally
-   - Lifestyle setting (not studio)
-   - Shows scale and how piece looks when worn
-
-3. **Detail Shot (optional):** Close-up of craftsmanship
-   - Macro photography showing texture, engraving, or unique details
-   - Highlights materials and quality
-
-**Style Guidelines:**
-- Clean, minimal aesthetic
-- Consistent lighting across all products
-- High contrast for gold to pop against background
-- No harsh shadows
-- Show true color and finish of materials
+**Specs:** JPG or WebP · min 800×1000px portrait · must read under a dark bottom gradient
+**Tip:** Avoid light/white images. Mid-to-dark tones work best with the text overlay.
 
 ---
 
-### Video Showcase (`components/home/VideoShowcase.tsx`)
-**Current:** `/4910096-hd_1920_1080_30fps.mp4`
+## 3. Philosophy Section (`components/home/PhilosophySection.tsx`)
 
-**Ideal Replacement:**
-- **Duration:** 30-60 seconds (looping video)
-- **Resolution:** Minimum 1920x1080px (Full HD), prefer 4K if possible
-- **Frame Rate:** 24-30fps
-- **Format:** MP4 (H.264 codec for web compatibility)
-- **File Size:** Under 20MB (optimize for web)
-
-**Content Options:**
-1. **Craftsmanship B-Roll:**
-   - Close-ups of hands working on jewellery
-   - Artisan at work (filing, polishing, setting stones)
-   - Slow-motion shots of tools, materials, process
-   - No faces needed—focus on hands and craft
-
-2. **Lifestyle Montage:**
-   - Models wearing jewellery in various elegant settings
-   - Slow camera movements (pans, slides, dolly shots)
-   - Soft, cinematic color grading
-   - Natural movements (hands adjusting a ring, touching a necklace)
-
-3. **Product Hero Video:**
-   - 360° rotation of hero product on turntable
-   - Dramatic lighting revealing details
-   - Macro shots showing texture and craftsmanship
-   - Slow-motion for added luxury feel
-
-**Mood & Style:**
-- Cinematic, not commercial
-- Warm color grading (slightly desaturated, film-like)
-- Slow movements (no quick cuts)
-- Natural or studio lighting (no harsh fluorescents)
-- Minimal or no text overlay needed
-- Background music not required (video will be muted on site)
-
-**Technical Requirements:**
-- Aspect ratio: 16:9 (horizontal)
-- No watermarks or branding
-- Smooth, professional editing
-- Color-corrected and graded
-- Audio not required (will be muted)
+- Portrait of founder/maker working, or close-up of hands holding a silver piece
+- Square or 4:3 · min 800×800px
 
 ---
 
-### Philosophy Section (`components/home/PhilosophySection.tsx`)
-**Current:** `/IMG_5181.jpg`
+## 4. About Page Hero (`app/about/page.tsx`)
 
-**Ideal Replacement:**
-- **Subject:** Behind-the-scenes or founder/team imagery
-  - Examples: Founder curating pieces, team selecting inventory, hands sorting through jewellery samples
-- **Mood:** Authentic, thoughtful, intentional
-- **Aspect Ratio:** Square (1:1)
-- **Minimum Resolution:** 1200x1200px
-- **Style:** Documentary-style, slightly editorial
-- **Avoid:** Overly posed shots, stock photo aesthetic
+- Wide editorial: artisan workshop, or a curated still life of the brand aesthetic
+- Landscape or 3:2
 
 ---
 
-### Brand Logos/Covers (`lib/mockData.ts` - Brand `logo` and `coverImage`)
-**Current:** `/IMG_5181.jpg` (used for all 3 brands)
+## 5. Contact Page (`app/contact/page.tsx`)
 
-**Ideal Replacement (6 images needed: 3 logos + 3 covers):**
-
-#### Logos (3 needed):
-- Clean, vector-based brand logos
-- Transparent background (PNG format)
-- Minimum 400x400px
-- Should work on both light and dark backgrounds
-
-#### Cover Images (3 needed):
-- Wide, cinematic brand hero shots
-- Aspect ratio: 16:9 or 21:9 (horizontal)
-- Minimum resolution: 1920x1080px
-- Represents brand aesthetic and philosophy
-- Could be: Workshop imagery, founder portrait, signature product styling
+- Elegant close-up: single silver piece on dark surface or in hand
+- Portrait 0.75 ratio · min 600×800px
 
 ---
 
-### Story Article Images (`lib/mockData.ts` - Story `image` fields)
-**Current:** `/IMG_5181.jpg` (used for all 3 articles)
+## 6. Video Showcase (`components/home/VideoShowcase.tsx`)
 
-**Ideal Replacement (3 images needed):**
+Replace `/4910096-hd_1920_1080_30fps.mp4` with a brand film.
 
-#### Article 1: "How to Build a Jewellery Collection"
-- Flat lay of various jewellery pieces showing a curated collection
-- Organized, minimal styling on neutral background
-
-#### Article 2: "What Gold Purity Actually Means"
-- Close-up of different gold pieces showing color variations (18k vs 22k)
-- Educational, comparative imagery
-
-#### Article 3: "Buying Jewellery in the Wrong Scale"
-- Side-by-side comparison showing scale differences
-- Model wearing different scales of jewellery for comparison
-
-**Specifications:**
-- Aspect ratio: 16:9 (horizontal)
-- Minimum resolution: 1920x1080px
-- Format: JPG or WebP
-- Clear, informative, editorial style
+- 60–90 second brand film: craftsmanship, styling, jewellery in motion
+- MP4 H.264 · 1920×1080 min · has audio (this player is unmuted)
 
 ---
 
-## General Photography Guidelines
+## General Rules
 
-### Do:
-- Use natural, soft lighting when possible
-- Shoot in high resolution (minimum 1920px on shortest side)
-- Maintain consistent color grading across all images
-- Show jewellery in realistic, aspirational contexts
-- Capture texture, detail, and craftsmanship
-- Use models that represent your target audience
-- Keep backgrounds simple and uncluttered
-- Show true-to-life colors of metals and stones
-
-### Don't:
-- Use stock photography that feels generic
-- Over-edit or heavily filter images
-- Use harsh, unflattering lighting
-- Shoot only product shots (need lifestyle context)
-- Include busy, distracting backgrounds
-- Use inconsistent styling across images
-- Compress images too much (maintain quality)
-
----
-
-## Optimization Guidelines
-
-Before uploading final assets:
-1. **Resize** to recommended dimensions
-2. **Compress** using tools like TinyPNG or Squoosh (aim for <300KB for images, <20MB for video)
-3. **Convert** to WebP format where supported for better performance
-4. **Rename** files descriptively (e.g., `hero-minimal-rings.jpg` not `IMG_5181.jpg`)
-5. **Test** on retina displays to ensure quality
-
----
-
-## Priority Replacement Order
-
-If replacing assets incrementally, prioritize in this order:
-1. **Hero image** (most visible, sets entire brand tone)
-2. **Video showcase** (high-impact, engaging content)
-3. **Collection cover images** (4 images, key navigation)
-4. **Product main images** (5 images minimum for featured products)
-5. **Philosophy section image** (brand authenticity)
-6. **Story article images** (3 images, content depth)
-7. **Brand logos/covers** (6 images, brand partnerships)
-8. **Product lifestyle/detail shots** (enhanced product pages)
-
----
-
-## File Naming Convention
-
-Use this structure for organized asset management:
-- Hero: `hero-[description].jpg` (e.g., `hero-gold-rings-hands.jpg`)
-- Collections: `collection-[slug]-cover.jpg` (e.g., `collection-quiet-gold-cover.jpg`)
-- Products: `product-[id]-[variant].jpg` (e.g., `product-1-main.jpg`, `product-1-lifestyle.jpg`)
-- Video: `video-[description].mp4` (e.g., `video-craftsmanship-broll.mp4`)
-- Brands: `brand-[slug]-[type].jpg` (e.g., `brand-minimal-studio-logo.png`)
-
----
-
-## Need Help Sourcing Assets?
-
-Consider these options:
-1. **Professional Photoshoot:** Hire a jewelry/fashion photographer
-2. **Unsplash/Pexels:** Free high-quality stock (ensure commercial license)
-3. **Adobe Stock:** Premium stock photography with jewelry-specific searches
-4. **Local Artisans:** Collaborate with jewelers for authentic craftsmanship shots
-5. **User-Generated Content:** Request high-quality photos from early customers (with permission)
-
----
-
-*Last Updated: March 2026*
+1. **Backgrounds**: Dark or warm mid-tones always. No pure white studio shots.
+2. **Palette**: Warm skin tones, aged silver, dark stone, linen all work with `#C9A96E` gold.
+3. **No text on images**: All text is CSS overlays. Keep images clean.
+4. **Compression**: Target < 300KB per image. Use squoosh.app or ImageOptim.
+5. **Naming**: `hero-ring-01.jpg`, `works-sculptural-silver.jpg` — descriptive, no spaces.

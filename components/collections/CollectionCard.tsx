@@ -10,7 +10,7 @@ export default function CollectionCard({ collection }: CollectionCardProps) {
   return (
     <Link href={`/collections/${collection.slug}`} className="group block">
       {/* Image */}
-      <div className="relative aspect-[3/4] mb-6 overflow-hidden bg-bg-secondary">
+      <div className="relative aspect-[3/4] mb-6 overflow-hidden bg-bg-tertiary border border-border-subtle">
         <Image
           src={collection.coverImage}
           alt={collection.title}
@@ -20,8 +20,8 @@ export default function CollectionCard({ collection }: CollectionCardProps) {
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
 
         {/* Product Count Badge */}
-        <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1">
-          <span className="font-dm-sans text-xs text-text-primary">
+        <div className="absolute top-4 right-4 bg-bg-primary border border-border-medium flex items-center px-3 py-1.5">
+          <span className="font-dm-sans text-[10px] uppercase tracking-section text-text-primary leading-none">
             {collection.productCount} pieces
           </span>
         </div>

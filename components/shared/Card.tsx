@@ -23,14 +23,14 @@ export default function Card({
     lg: 'p-8 md:p-12',
   }
 
-  const baseStyles = `bg-white border border-border-subtle ${paddingStyles[padding]} ${className}`
+  const baseStyles = `bg-bg-primary border border-border-subtle ${paddingStyles[padding]} ${className}`
 
   if (hover) {
     return (
       <motion.div
         className={`${baseStyles} cursor-pointer`}
         onClick={onClick}
-        whileHover={{ scale: 1.02, boxShadow: '0 8px 30px rgba(0, 0, 0, 0.08)' }}
+        whileHover={{ scale: 1.02, boxShadow: '0 8px 30px rgba(0, 0, 0, 0.4)' }}
         transition={{ duration: 0.3, ease: 'easeOut' }}
       >
         {children}

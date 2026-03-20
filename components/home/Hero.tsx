@@ -1,79 +1,68 @@
 'use client'
 
 import { motion } from 'framer-motion'
-import Button from '@/components/shared/Button'
-import Image from 'next/image'
+import OrbitalCarousel from './OrbitalCarousel'
 
 export default function Hero() {
   return (
-    <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="/IMG_5181.jpg"
-          alt="Curated Jewellery"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Dark overlay for text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/40 to-black/60" />
-      </div>
+    <section
+      className="relative flex items-center justify-center overflow-hidden bg-bg-primary"
+      style={{ height: '100dvh', position: 'sticky', top: 0, zIndex: 1 }}
+    >
+      {/* Subtle gold glow behind brand name — always present */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{ background: 'radial-gradient(ellipse 50% 35% at 50% 50%, rgba(201,169,110,0.07) 0%, transparent 65%)' }}
+        aria-hidden="true"
+      />
 
-      {/* Content */}
+      {/* Rotating jewellery orbit */}
+      <OrbitalCarousel />
+
+      {/* Center text — sits above the carousel */}
       <motion.div
-        className="relative z-10 max-w-4xl mx-auto px-6 text-center"
+        className="relative flex flex-col items-center justify-center text-center gap-4 md:gap-5 px-5 w-full"
+        style={{ zIndex: 10 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delayChildren: 0.3, staggerChildren: 0.2 }}
+        transition={{ duration: 0.9, delay: 0.3 }}
       >
-        {/* Main Heading */}
+        {/* Brand name */}
         <motion.h1
-          className="font-cormorant text-5xl md:text-6xl lg:text-7xl text-white font-light tracking-tagline mb-6 leading-tight"
-          initial={{ opacity: 0, y: 30 }}
+          className="font-lovelo text-text-primary uppercase leading-none"
+          style={{ fontSize: 'clamp(44px, 9vw, 120px)', letterSpacing: '-0.04em' }}
+          initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
         >
-          Jewellery, curated by story — not algorithms.
+          DASYANTE
         </motion.h1>
 
-        {/* Subtext */}
+        {/* Tagline */}
         <motion.p
-          className="font-dm-sans text-lg md:text-xl text-white/90 mb-10 max-w-2xl mx-auto"
-          initial={{ opacity: 0, y: 20 }}
+          className="font-dm-sans text-text-secondary uppercase tracking-section"
+          style={{ fontSize: 'clamp(11px, 3vw, 14px)' }}
+          initial={{ opacity: 0, y: 12 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.22 }}
         >
-          Discover pieces you understand, not just browse.
+          A quieter way to wear silver
         </motion.p>
 
-        {/* CTAs */}
-        <motion.div
-          className="flex flex-col sm:flex-row items-center justify-center gap-4"
-          initial={{ opacity: 0, y: 10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, ease: 'easeOut', delay: 0.4 }}
-        >
-          <Button variant="solid" size="lg" href="/collections">
-            Explore Collections
-          </Button>
-          <Button variant="ghost" size="lg" href="/stories">
-            Start with a Story
-          </Button>
-        </motion.div>
       </motion.div>
 
-      {/* Scroll Indicator (optional) */}
+      {/* Scroll line */}
       <motion.div
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-10"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2"
+        style={{ zIndex: 10 }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 1 }}
+        transition={{ duration: 1, delay: 1.2 }}
       >
         <motion.div
-          className="w-[1px] h-16 bg-white/50"
-          animate={{ scaleY: [1, 0.5, 1] }}
-          transition={{ duration: 1.5, repeat: Infinity, ease: 'easeInOut' }}
+          className="w-[1px] h-10 bg-border-subtle mx-auto"
+          animate={{ scaleY: [1, 0.4, 1] }}
+          transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
         />
       </motion.div>
     </section>

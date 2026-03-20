@@ -1,27 +1,28 @@
 'use client'
 
-import Image from 'next/image'
 import Button from '@/components/shared/Button'
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-bg-primary">
       {/* Hero Section */}
-      <section className="relative h-[70vh] flex items-center justify-center">
-        <div className="absolute inset-0">
-          <Image
-            src="/IMG_5181.jpg"
-            alt="Dasyante"
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-black/60" />
-        </div>
+      <section className="relative flex items-center justify-center border-b border-border-subtle overflow-hidden" style={{ minHeight: '60vh' }}>
+        {/* Background image */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/DESKTOP_JPEG_1920x@2x.webp"
+          alt=""
+          aria-hidden="true"
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: '50% 15%' }}
+        />
+        <div className="absolute inset-0" style={{ background: 'linear-gradient(to bottom, rgba(10,10,10,0.60) 0%, rgba(10,10,10,0.80) 100%)' }} />
 
-        <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
-          <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl text-white mb-6 leading-tight">
-            We are not a marketplace. We are a curator.
+        <div className="relative z-10 text-center px-6 py-24 md:py-36" style={{ maxWidth: '1100px', margin: '0 auto' }}>
+          <h1 className="font-cormorant text-white leading-tight whitespace-nowrap" style={{ fontSize: 'clamp(24px, 4vw, 56px)', letterSpacing: '-0.03em' }}>
+            We are not a marketplace.
+          </h1>
+          <h1 className="font-cormorant text-white leading-tight whitespace-nowrap" style={{ fontSize: 'clamp(24px, 4vw, 56px)', letterSpacing: '-0.03em' }}>
+            We are a curator.
           </h1>
         </div>
       </section>
@@ -33,10 +34,10 @@ export default function AboutPage() {
             <h2 className="font-dm-sans text-xs uppercase tracking-wide text-accent-gold">
               The Problem
             </h2>
-            <h3 className="font-cormorant text-3xl md:text-4xl lg:text-5xl text-text-primary leading-tight">
+            <h3 className="font-cormorant text-2xl md:text-4xl lg:text-5xl text-text-primary leading-tight">
               Jewellery discovery today is overwhelming and contextless
             </h3>
-            <div className="font-dm-sans text-lg md:text-xl text-text-secondary leading-relaxed space-y-4">
+            <div className="font-dm-sans text-base md:text-lg text-text-secondary leading-relaxed space-y-4">
               <p>
                 You open an e-commerce site. You're shown 10,000 pieces. Categories like "Rings," "Necklaces," "Earrings." Filters for price, material, brand. An infinite scroll of thumbnails that all look the same.
               </p>
@@ -52,16 +53,16 @@ export default function AboutPage() {
       </section>
 
       {/* Insight Section */}
-      <section className="py-20 md:py-28 bg-bg-secondary">
+      <section className="py-20 md:py-28 bg-bg-primary border-t border-border-subtle">
         <div className="max-w-4xl mx-auto px-6 md:px-10">
           <div className="space-y-6">
             <h2 className="font-dm-sans text-xs uppercase tracking-wide text-accent-gold">
               The Insight
             </h2>
-            <h3 className="font-cormorant text-3xl md:text-4xl lg:text-5xl text-text-primary leading-tight">
+            <h3 className="font-cormorant text-2xl md:text-4xl lg:text-5xl text-text-primary leading-tight">
               People don't lack options — they lack understanding
             </h3>
-            <div className="font-dm-sans text-lg md:text-xl text-text-secondary leading-relaxed space-y-4">
+            <div className="font-dm-sans text-base md:text-lg text-text-secondary leading-relaxed space-y-4">
               <p>
                 Jewellery is not a transaction. It's a relationship. With your taste, your story, your identity.
               </p>
@@ -83,10 +84,10 @@ export default function AboutPage() {
             <h2 className="font-dm-sans text-xs uppercase tracking-wide text-accent-gold">
               The Solution
             </h2>
-            <h3 className="font-cormorant text-3xl md:text-4xl lg:text-5xl text-text-primary leading-tight">
+            <h3 className="font-cormorant text-2xl md:text-4xl lg:text-5xl text-text-primary leading-tight">
               We curate through story
             </h3>
-            <div className="font-dm-sans text-lg md:text-xl text-text-secondary leading-relaxed space-y-4">
+            <div className="font-dm-sans text-base md:text-lg text-text-secondary leading-relaxed space-y-4">
               <p>
                 Dasyante doesn't sell jewellery. We guide you to it. Through collections built on narrative, not categories. Through product pages that explain why this piece exists, who it's for, and when it fits into your life—before showing you the price.
               </p>
@@ -102,16 +103,16 @@ export default function AboutPage() {
       </section>
 
       {/* Position Section */}
-      <section className="py-20 md:py-28 bg-bg-secondary">
+      <section className="py-20 md:py-28 bg-bg-primary border-t border-border-subtle">
         <div className="max-w-4xl mx-auto px-6 md:px-10">
           <div className="space-y-6">
             <h2 className="font-dm-sans text-xs uppercase tracking-wide text-accent-gold">
               Our Position
             </h2>
-            <h3 className="font-cormorant text-3xl md:text-4xl lg:text-5xl text-text-primary leading-tight">
+            <h3 className="font-cormorant text-2xl md:text-4xl lg:text-5xl text-text-primary leading-tight">
               We are not a marketplace. We are a curator.
             </h3>
-            <div className="font-dm-sans text-lg md:text-xl text-text-secondary leading-relaxed space-y-4">
+            <div className="font-dm-sans text-base md:text-lg text-text-secondary leading-relaxed space-y-4">
               <p>
                 Marketplaces chase scale. They want every brand, every product, every customer. Their job is to give you options and get out of the way.
               </p>
@@ -132,7 +133,7 @@ export default function AboutPage() {
           <h2 className="font-cormorant text-3xl md:text-4xl text-text-primary mb-16 text-center">
             What We Believe
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-16">
             <div className="space-y-4">
               <h3 className="font-dm-sans text-sm uppercase tracking-wide text-accent-gold">
                 Story over Search
@@ -162,7 +163,7 @@ export default function AboutPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 md:py-28 bg-bg-secondary text-center">
+      <section className="py-20 md:py-28 bg-bg-primary border-t border-border-subtle text-center">
         <div className="max-w-3xl mx-auto px-6 md:px-10">
           <h2 className="font-cormorant text-3xl md:text-4xl text-text-primary mb-6">
             Ready to discover jewellery that makes sense?

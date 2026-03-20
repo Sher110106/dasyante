@@ -108,7 +108,7 @@ export default function FAQPage() {
           <p className="font-dm-sans text-xs uppercase tracking-section text-accent-gold mb-6">
             Questions
           </p>
-          <h1 className="font-cormorant text-5xl md:text-6xl text-text-primary leading-tight">
+          <h1 className="font-cormorant text-3xl md:text-5xl text-text-primary leading-tight">
             Frequently Asked Questions
           </h1>
         </div>
@@ -116,7 +116,7 @@ export default function FAQPage() {
 
       {/* FAQs */}
       <section className="py-20 md:py-28 bg-bg-primary">
-        <div className="max-w-3xl mx-auto px-6 md:px-10 space-y-16">
+        <div className="max-w-3xl mx-auto px-6 md:px-10 space-y-10 md:space-y-16">
           {faqs.map((section) => (
             <div key={section.category}>
               <h2 className="font-dm-sans text-xs uppercase tracking-section text-accent-gold mb-8">
@@ -133,7 +133,7 @@ export default function FAQPage() {
       </section>
 
       {/* Still have questions */}
-      <section className="py-20 md:py-28 bg-bg-secondary text-center">
+      <section className="py-20 md:py-28 bg-bg-primary border-t border-border-subtle text-center">
         <div className="max-w-2xl mx-auto px-6 md:px-10">
           <h2 className="font-cormorant text-3xl text-text-primary mb-4">
             Still have a question?

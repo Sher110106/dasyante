@@ -7,20 +7,20 @@ export default function VideoShowcase() {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   return (
-    <section className="relative py-20 md:py-32 bg-bg-primary overflow-hidden">
+    <section className="relative py-20 md:py-32 bg-bg-primary border-t border-border-subtle overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Text Content */}
         <motion.div
-          className="max-w-3xl mx-auto text-center mb-16"
+          className="max-w-3xl mx-auto text-center mb-10 md:mb-16"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="font-cormorant text-4xl md:text-5xl lg:text-6xl text-text-primary mb-6 leading-tight">
+          <h2 className="font-cormorant text-3xl md:text-5xl lg:text-6xl text-text-primary mb-6 leading-tight">
             Crafted with intention, worn with meaning
           </h2>
-          <p className="font-dm-sans text-lg text-text-secondary leading-relaxed">
+          <p className="font-dm-sans text-lg text-text-secondary leading-relaxed" style={{ letterSpacing: '-0.02em' }}>
             Every piece tells a story. Every story deserves to be understood. We don't curate for trends—we curate for permanence.
           </p>
         </motion.div>

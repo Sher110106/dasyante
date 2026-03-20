@@ -30,7 +30,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
         <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
           {/* Brand Logo */}
-          <div className="relative w-32 h-32 mx-auto mb-8 bg-white/10 backdrop-blur-md p-6 rounded-full">
+          <div className="relative w-56 h-20 mx-auto mb-8 px-6 py-3" style={{ background: '#fff' }}>
             <Image
               src={brand.logo}
               alt={brand.name}
@@ -93,7 +93,7 @@ export default function BrandDetailPage({ params }: { params: { slug: string } }
 
       {/* Featured Products from Brand */}
       {brandProducts.length > 0 && (
-        <section className="py-20 md:py-28 bg-bg-secondary">
+        <section className="py-20 md:py-28 bg-bg-tertiary">
           <div className="max-w-7xl mx-auto px-6 md:px-10">
             <h2 className="font-cormorant text-3xl md:text-4xl text-text-primary mb-12 text-center">
               Featured Pieces from {brand.name}

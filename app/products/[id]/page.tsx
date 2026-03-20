@@ -24,7 +24,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
             {/* Left: Images */}
             <div className="space-y-4">
               {/* Main Image */}
-              <div className="relative aspect-square bg-bg-secondary overflow-hidden">
+              <div className="relative aspect-square bg-bg-tertiary overflow-hidden">
                 <Image
                   src={product.images[0]}
                   alt={product.name}
@@ -38,7 +38,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
               {product.images.length > 1 && (
                 <div className="grid grid-cols-4 gap-4">
                   {product.images.slice(1).map((image, index) => (
-                    <div key={index} className="relative aspect-square bg-bg-secondary overflow-hidden">
+                    <div key={index} className="relative aspect-square bg-bg-tertiary overflow-hidden">
                       <Image
                         src={image}
                         alt={`${product.name} - ${index + 2}`}
@@ -61,13 +61,10 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                 <h1 className="font-cormorant text-4xl md:text-5xl text-text-primary mb-4">
                   {product.name}
                 </h1>
-                <p className="font-dm-sans text-2xl text-text-primary font-medium">
-                  ₹{product.price.toLocaleString()}
-                </p>
               </div>
 
               {/* Story First - Most Important Section */}
-              <div className="bg-bg-secondary p-8 space-y-6">
+              <div className="bg-bg-tertiary p-8 space-y-6">
                 <h2 className="font-cormorant text-2xl text-text-primary">The Story</h2>
 
                 <div className="space-y-4 font-dm-sans text-base text-text-secondary leading-relaxed">
@@ -144,7 +141,12 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
               {/* CTA */}
               <div className="pt-4">
-                <Button variant="solid" size="lg" className="w-full">
+                <Button
+                  variant="solid"
+                  size="lg"
+                  className="w-full"
+                  href={`/contact?topic=Order+or+Inquiry&product=${encodeURIComponent(product.name)}`}
+                >
                   Inquire About This Piece
                 </Button>
                 <p className="font-dm-sans text-xs text-text-tertiary text-center mt-4">
@@ -158,7 +160,7 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
 
       {/* Related Products */}
       {relatedProducts.length > 0 && (
-        <section className="py-16 md:py-24 bg-bg-secondary">
+        <section className="py-16 md:py-24 bg-bg-tertiary">
           <div className="max-w-7xl mx-auto px-6 md:px-10">
             <h2 className="font-cormorant text-3xl md:text-4xl text-text-primary mb-12">
               You might also like
@@ -184,9 +186,6 @@ export default function ProductDetailPage({ params }: { params: { id: string } }
                   <h3 className="font-cormorant text-lg text-text-primary group-hover:text-accent-gold transition-colors">
                     {relatedProduct.name}
                   </h3>
-                  <p className="font-dm-sans text-sm text-text-primary font-medium mt-1">
-                    ₹{relatedProduct.price.toLocaleString()}
-                  </p>
                 </a>
               ))}
             </div>

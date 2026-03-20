@@ -16,7 +16,7 @@ export default function StoryCard({ story }: StoryCardProps) {
   return (
     <Link href={`/stories/${story.slug}`} className="group block">
       {/* Image */}
-      <div className="relative aspect-[16/10] mb-6 overflow-hidden bg-bg-secondary">
+      <div className="relative aspect-[16/10] mb-6 overflow-hidden bg-bg-tertiary border border-border-subtle">
         <Image
           src={story.image}
           alt={story.title}
@@ -25,8 +25,8 @@ export default function StoryCard({ story }: StoryCardProps) {
         />
 
         {/* Category Badge */}
-        <div className="absolute top-4 left-4 bg-white px-3 py-1">
-          <span className="font-dm-sans text-xs text-text-primary uppercase tracking-wide">
+        <div className="absolute top-4 left-4 bg-bg-primary border border-border-subtle px-3 py-1">
+          <span className="font-dm-sans text-[10px] text-text-secondary uppercase tracking-section">
             {categoryLabels[story.category]}
           </span>
         </div>

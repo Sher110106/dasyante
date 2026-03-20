@@ -60,7 +60,7 @@ export default function SizeGuidePage() {
                       ['15', '60.8', '8¼', 'Q'],
                       ['16', '62.1', '8½', 'Q½'],
                     ].map(([ind, circ, us, uk]) => (
-                      <tr key={ind} className="border-b border-border-subtle hover:bg-bg-secondary transition-colors">
+                      <tr key={ind} className="border-b border-border-subtle hover:bg-bg-tertiary transition-colors">
                         <td className="py-3 px-4 text-text-primary">{ind}</td>
                         <td className="py-3 px-4 text-text-secondary">{circ} mm</td>
                         <td className="py-3 px-4 text-text-secondary">{us}</td>
@@ -102,7 +102,7 @@ export default function SizeGuidePage() {
                       ['L', '17–18', '18–18.5 cm'],
                       ['XL', '18–19', '19–19.5 cm'],
                     ].map(([size, wrist, length]) => (
-                      <tr key={size} className="border-b border-border-subtle hover:bg-bg-secondary transition-colors">
+                      <tr key={size} className="border-b border-border-subtle hover:bg-bg-tertiary transition-colors">
                         <td className="py-3 px-4 text-text-primary">{size}</td>
                         <td className="py-3 px-4 text-text-secondary">{wrist} cm</td>
                         <td className="py-3 px-4 text-text-secondary">{length}</td>

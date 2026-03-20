@@ -11,7 +11,7 @@ export default function FeaturedCollections() {
   const featuredCollections = mockCollections.slice(0, 3)
 
   return (
-    <section className="py-20 md:py-32 bg-bg-secondary">
+    <section className="py-20 md:py-32 bg-bg-primary border-t border-border-subtle">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <SectionHeading
           title="Curated Collections"
@@ -38,7 +38,7 @@ export default function FeaturedCollections() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-500" />
                 </div>
 
                 {/* Content */}
@@ -46,20 +46,20 @@ export default function FeaturedCollections() {
                   <h3 className="font-cormorant text-2xl md:text-3xl text-text-primary group-hover:text-accent-gold transition-colors duration-300">
                     {collection.title}
                   </h3>
-                  <p className="font-dm-sans text-sm text-text-secondary leading-relaxed line-clamp-2">
+                  <p className="font-dm-sans text-sm text-text-secondary leading-relaxed line-clamp-2" style={{ letterSpacing: '-0.02em' }}>
                     {collection.narrative}
                   </p>
-                  <div className="flex items-center gap-2 text-sm">
+                  <div className="flex items-center gap-2 flex-wrap">
                     {collection.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="font-dm-sans text-xs text-text-tertiary border border-border-subtle px-2 py-1"
+                        className="font-dm-sans text-[10px] uppercase text-text-secondary border border-border-subtle px-2 py-1 tracking-section"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <div className="font-dm-sans text-sm text-accent-gold pt-2">
+                  <div className="font-dm-sans text-xs uppercase tracking-section text-accent-gold pt-2">
                     Explore Collection →
                   </div>
                 </div>

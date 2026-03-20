@@ -11,14 +11,14 @@ export default function FeaturedProducts() {
   const featuredProducts = mockProducts.slice(0, 4)
 
   return (
-    <section className="py-20 md:py-32 bg-bg-primary">
+    <section className="py-20 md:py-32 bg-bg-primary border-t border-border-subtle">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         <SectionHeading
           title="Featured Pieces"
           subtitle="Chosen for you, curated through story"
         />
 
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {featuredProducts.map((product, index) => (
             <motion.div
               key={product.id}
@@ -29,7 +29,7 @@ export default function FeaturedProducts() {
             >
               <Link href={`/products/${product.id}`} className="group block">
                 {/* Image */}
-                <div className="relative aspect-square mb-4 overflow-hidden bg-bg-secondary">
+                <div className="relative aspect-square mb-4 overflow-hidden bg-bg-tertiary border border-border-subtle">
                   <Image
                     src={product.images[0]}
                     alt={product.name}
@@ -48,9 +48,6 @@ export default function FeaturedProducts() {
                   </h3>
                   <p className="font-dm-sans text-sm text-text-secondary italic">
                     {product.storyTag}
-                  </p>
-                  <p className="font-dm-sans text-sm text-text-primary font-medium pt-1">
-                    ₹{product.price.toLocaleString()}
                   </p>
                 </div>
               </Link>

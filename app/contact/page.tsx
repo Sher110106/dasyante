@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, Suspense } from 'react'
+import { useSearchParams } from 'next/navigation'
 
 const TOPICS = [
   'General Enquiry',
@@ -10,8 +11,15 @@ const TOPICS = [
   'Something Else',
 ]
 
-export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', topic: TOPICS[0], message: '' })
+function ContactForm() {
+  const searchParams = useSearchParams()
+  const topicParam = searchParams.get('topic') ?? ''
+  const productParam = searchParams.get('product') ?? ''
+
+  const initialTopic = TOPICS.includes(topicParam) ? topicParam : TOPICS[0]
+  const initialMessage = productParam ? `I'd like to inquire about: ${productParam}` : ''
+
+  const [form, setForm] = useState({ name: '', email: '', topic: initialTopic, message: initialMessage })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [result, setResult] = useState<{ success: boolean; message: string } | null>(null)
 
@@ -42,14 +50,14 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-bg-primary">
       {/* Hero */}
       <section className="py-24 md:py-32 bg-bg-primary border-b border-border-subtle">
         <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
           <p className="font-dm-sans text-xs uppercase tracking-section text-accent-gold mb-6">
             Get in Touch
           </p>
-          <h1 className="font-cormorant text-5xl md:text-6xl text-text-primary leading-tight mb-6">
+          <h1 className="font-cormorant text-3xl md:text-5xl md:text-6xl text-text-primary leading-tight mb-6">
             Contact Us
           </h1>
           <p className="font-dm-sans text-base text-text-secondary max-w-xl mx-auto leading-relaxed">
@@ -58,9 +66,9 @@ export default function ContactPage() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-bg-secondary">
+      <section className="py-20 md:py-28 bg-bg-primary">
         <div className="max-w-6xl mx-auto px-6 md:px-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-24">
             {/* Left: Contact info */}
             <div className="space-y-12">
               <div className="space-y-4">
@@ -149,7 +157,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         disabled={isSubmitting}
-                        className="w-full px-4 py-3 border border-border-subtle bg-bg-primary font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors"
+                        className="w-full px-4 py-3 border border-border-subtle bg-bg-tertiary font-dm-sans text-sm text-text-primary placeholder:text-text-secondary focus:outline-none focus:border-accent-gold transition-colors"
                         placeholder="Your full name"
                       />
                     </div>
@@ -164,7 +172,7 @@ export default function ContactPage() {
                         onChange={handleChange}
                         required
                         disabled={isSubmitting}
-                        className="w-full px-4 py-3 border border-border-subtle bg-bg-primary font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors"
+                        className="w-full px-4 py-3 border border-border-subtle bg-bg-tertiary font-dm-sans text-sm text-text-primary placeholder:text-text-secondary focus:outline-none focus:border-accent-gold transition-colors"
                         placeholder="you@example.com"
                       />
                     </div>
@@ -179,7 +187,7 @@ export default function ContactPage() {
                       value={form.topic}
                       onChange={handleChange}
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-border-subtle bg-bg-primary font-dm-sans text-sm text-text-primary focus:outline-none focus:border-accent-gold transition-colors appearance-none"
+                      className="w-full px-4 py-3 border border-border-subtle bg-bg-tertiary font-dm-sans text-sm text-text-primary focus:outline-none focus:border-accent-gold transition-colors appearance-none"
                     >
                       {TOPICS.map((t) => (
                         <option key={t} value={t}>
@@ -200,7 +208,7 @@ export default function ContactPage() {
                       required
                       rows={6}
                       disabled={isSubmitting}
-                      className="w-full px-4 py-3 border border-border-subtle bg-bg-primary font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors resize-none"
+                      className="w-full px-4 py-3 border border-border-subtle bg-bg-tertiary font-dm-sans text-sm text-text-primary placeholder:text-text-secondary focus:outline-none focus:border-accent-gold transition-colors resize-none"
                       placeholder="Tell us what's on your mind."
                     />
                   </div>
@@ -208,7 +216,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full py-4 bg-text-primary text-white font-dm-sans text-xs uppercase tracking-btn hover:bg-accent-gold transition-colors duration-300 disabled:opacity-50"
+                    className="w-full py-4 bg-accent-gold text-bg-primary font-dm-sans text-xs uppercase tracking-btn hover:bg-accent-gold-dark transition-colors duration-300 disabled:opacity-50"
                   >
                     {isSubmitting ? 'Preparing...' : 'Send Message'}
                   </button>
@@ -219,5 +227,13 @@ export default function ContactPage() {
         </div>
       </section>
     </div>
+  )
+}
+
+export default function ContactPage() {
+  return (
+    <Suspense>
+      <ContactForm />
+    </Suspense>
   )
 }

@@ -61,7 +61,7 @@ export default function PartnersPage() {
           <p className="font-dm-sans text-xs uppercase tracking-section text-accent-gold mb-4">
             For Brands
           </p>
-          <h1 className="font-cormorant text-5xl md:text-6xl lg:text-7xl text-white leading-tight">
+          <h1 className="font-cormorant text-3xl md:text-5xl lg:text-7xl text-white leading-tight">
             Partner with Dasyante
           </h1>
           <p className="font-dm-sans text-base text-white/70 mt-6 max-w-xl mx-auto leading-relaxed">
@@ -100,7 +100,7 @@ export default function PartnersPage() {
       </section>
 
       {/* What partnership means */}
-      <section className="py-20 md:py-28 bg-bg-secondary">
+      <section className="py-20 md:py-28 bg-bg-tertiary">
         <div className="max-w-4xl mx-auto px-6 md:px-10">
           <h2 className="font-dm-sans text-xs uppercase tracking-section text-accent-gold mb-10">
             What Partnership Means
@@ -231,7 +231,7 @@ export default function PartnersPage() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full py-4 bg-text-primary text-white font-dm-sans text-xs uppercase tracking-btn hover:bg-accent-gold transition-colors duration-300 disabled:opacity-50"
+                className="w-full py-4 bg-accent-gold text-bg-primary font-dm-sans text-xs uppercase tracking-btn hover:bg-accent-gold-dark transition-colors duration-300 disabled:opacity-50"
               >
                 {isSubmitting ? 'Submitting...' : 'Submit Application'}
               </button>

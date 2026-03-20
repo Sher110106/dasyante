@@ -22,6 +22,7 @@ export default function CollectionDetailPage({ params }: { params: { slug: strin
             alt={collection.title}
             fill
             className="object-cover"
+            style={{ objectPosition: '50% 15%' }}
             priority
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
@@ -55,7 +56,7 @@ export default function CollectionDetailPage({ params }: { params: { slug: strin
       </section>
 
       {/* Collection Description */}
-      <section className="py-12 md:py-16 bg-bg-secondary">
+      <section className="py-12 md:py-16 bg-bg-tertiary">
         <div className="max-w-4xl mx-auto px-6 md:px-10 text-center">
           <h2 className="font-cormorant text-2xl md:text-3xl text-text-primary mb-6">
             Why This Collection
@@ -87,7 +88,7 @@ export default function CollectionDetailPage({ params }: { params: { slug: strin
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-bg-secondary">
+      <section className="py-16 bg-bg-tertiary">
         <div className="max-w-3xl mx-auto px-6 md:px-10 text-center">
           <p className="font-dm-sans text-base text-text-secondary mb-4">
             Want to understand the stories behind these pieces?

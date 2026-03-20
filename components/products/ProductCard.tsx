@@ -31,9 +31,6 @@ export default function ProductCard({ product }: ProductCardProps) {
         <p className="font-dm-sans text-sm text-text-secondary italic line-clamp-1">
           {product.storyTag}
         </p>
-        <p className="font-dm-sans text-sm text-text-primary font-medium pt-1">
-          ₹{product.price.toLocaleString()}
-        </p>
       </div>
     </Link>
   )

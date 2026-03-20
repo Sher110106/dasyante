@@ -4,10 +4,10 @@ import { mockCollections } from '@/lib/mockData'
 
 export default function CollectionsPage() {
   return (
-    <div className="min-h-screen py-20 md:py-28">
+    <div className="min-h-screen py-20 md:py-28 bg-bg-primary">
       <div className="max-w-7xl mx-auto px-6 md:px-10">
         {/* Page Header */}
-        <div className="mb-16">
+        <div className="mb-10 md:mb-16">
           <SectionHeading
             title="Curated Collections"
             subtitle="Each collection tells a story, not just a category. Explore jewellery chosen for intent, not inventory."
@@ -16,7 +16,7 @@ export default function CollectionsPage() {
         </div>
 
         {/* Collections Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 md:gap-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-16">
           {mockCollections.map((collection) => (
             <CollectionCard key={collection.id} collection={collection} />
           ))}
