@@ -65,9 +65,9 @@ export const mockCollections: Collection[] = [
     id: '1',
     title: 'Indian Minimalism',
     slug: 'indian-minimalism',
-    narrative: 'Where understated Indian craft meets modern demi-fine jewellery. Pieces made to be worn every day, not stored.',
+    narrative: 'Where understated Indian craft meets contemporary jewellery. Pieces made to be worn every day, not stored.',
     description: 'Curated sterling silver pieces from Indian designers — handcrafted with traditional techniques, finished for contemporary life.',
-    tags: ['Sterling Silver', 'Demi-Fine', 'Indian Craft'],
+    tags: ['Sterling Silver', 'Indian Craft'],
     productCount: 5,
     coverImage: '/collection.png',
     whyThisCollection: 'Indian jewellery has always known restraint — it\'s there in jadau work, in delicate moissanite settings, in the weight of a single gemstone. This collection gathers that sensibility into five pieces that wear lightly and mean quietly.'

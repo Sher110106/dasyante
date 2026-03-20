@@ -29,7 +29,7 @@ export default function TermsPage() {
             <div className="space-y-4">
               <h2 className="font-cormorant text-2xl text-text-primary">What Dasyante Is</h2>
               <p>
-                Dasyante is a curated editorial platform and marketplace connector for demi-fine jewellery. We present brand stories and facilitate connections between customers and brands. Dasyante itself is not the seller of record for any product — all purchases are made directly with the individual brands.
+                Dasyante is a curated editorial platform and marketplace connector for jewellery. We present brand stories and facilitate connections between customers and brands. Dasyante itself is not the seller of record for any product — all purchases are made directly with the individual brands.
               </p>
             </div>
 

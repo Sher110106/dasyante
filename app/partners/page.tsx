@@ -152,7 +152,7 @@ export default function PartnersPage() {
                     onChange={handleChange}
                     required
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3 border border-border-subtle font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors"
+                    className="w-full px-4 py-3 border border-border-subtle bg-bg-tertiary font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors"
                     placeholder="e.g. Minimal Studio"
                   />
                 </div>
@@ -167,7 +167,7 @@ export default function PartnersPage() {
                     onChange={handleChange}
                     required
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3 border border-border-subtle font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors"
+                    className="w-full px-4 py-3 border border-border-subtle bg-bg-tertiary font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors"
                     placeholder="Founder or representative"
                   />
                 </div>
@@ -185,7 +185,7 @@ export default function PartnersPage() {
                     onChange={handleChange}
                     required
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3 border border-border-subtle font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors"
+                    className="w-full px-4 py-3 border border-border-subtle bg-bg-tertiary font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors"
                     placeholder="you@brand.com"
                   />
                 </div>
@@ -199,7 +199,7 @@ export default function PartnersPage() {
                     value={form.website}
                     onChange={handleChange}
                     disabled={isSubmitting}
-                    className="w-full px-4 py-3 border border-border-subtle font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors"
+                    className="w-full px-4 py-3 border border-border-subtle bg-bg-tertiary font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors"
                     placeholder="https://yourbrand.com"
                   />
                 </div>
@@ -219,7 +219,7 @@ export default function PartnersPage() {
                   required
                   rows={6}
                   disabled={isSubmitting}
-                  className="w-full px-4 py-3 border border-border-subtle font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors resize-none"
+                  className="w-full px-4 py-3 border border-border-subtle bg-bg-tertiary font-dm-sans text-sm text-text-primary placeholder:text-text-tertiary focus:outline-none focus:border-accent-gold transition-colors resize-none"
                   placeholder="Write openly. We read every word."
                 />
               </div>

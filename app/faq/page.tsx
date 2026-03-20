@@ -8,11 +8,7 @@ const faqs = [
     items: [
       {
         q: 'What is Dasyante?',
-        a: 'Dasyante is a curated demi-fine jewellery marketplace. We work with a small number of independent brands and present their work through story and context — not just product listings. We exist to help you find jewellery you understand, not just browse.',
-      },
-      {
-        q: 'What is demi-fine jewellery?',
-        a: 'Demi-fine sits between fashion jewellery and fine jewellery. Typically gold-plated or vermeil, crafted with semi-precious stones, at a price point that is significant without being inaccessible. It\'s jewellery meant to be worn daily and kept for years.',
+        a: 'Dasyante is a curated jewellery marketplace. We work with a small number of independent brands and present their work through story and context — not just product listings. We exist to help you find jewellery you understand, not just browse.',
       },
       {
         q: 'How do you choose which brands to feature?',
@@ -58,12 +54,12 @@ const faqs = [
     category: 'Care & Materials',
     items: [
       {
-        q: 'How do I care for demi-fine jewellery?',
+        q: 'How do I care for my jewellery?',
         a: 'Keep pieces away from perfume, lotions, and water. Store them individually to avoid scratching. Remove before sleeping or physical activity. Wipe with a soft, dry cloth after wearing. Proper care can extend the life of a plated piece significantly.',
       },
       {
         q: 'What does "gold vermeil" mean?',
-        a: 'Vermeil is a thick layer of gold (at least 2.5 microns) electroplated over sterling silver. It\'s more durable than standard gold plating and is the standard for quality demi-fine jewellery.',
+        a: 'Vermeil is a thick layer of gold (at least 2.5 microns) electroplated over sterling silver. It\'s more durable than standard gold plating and is the standard for quality jewellery.',
       },
       {
         q: 'What is the difference between gold-filled and gold-plated?',
