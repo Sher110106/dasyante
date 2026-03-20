@@ -34,25 +34,24 @@ function ContactForm() {
     setIsSubmitting(true)
     setResult(null)
 
-    // Since there's no contact API, we open a mailto as fallback
-    // Replace this with a real contact API endpoint when ready
-    const subject = encodeURIComponent(`[${form.topic}] from ${form.name}`)
-    const body = encodeURIComponent(
-      `Name: ${form.name}\nEmail: ${form.email}\nTopic: ${form.topic}\n\n${form.message}`
-    )
-    const mailtoLink = `mailto:help@dasyante.com?subject=${subject}&body=${body}`
-    const a = document.createElement('a')
-    a.href = mailtoLink
-    a.style.display = 'none'
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-
-    setResult({
-      success: true,
-      message: "We've opened your email client. If it didn't open, write to us directly at help@dasyante.com",
-    })
-    setIsSubmitting(false)
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      })
+      if (res.ok) {
+        setResult({ success: true, message: "Your message has been received. We'll be in touch within two business days." })
+        setForm({ name: '', email: '', topic: TOPICS[0], message: '' })
+      } else {
+        const data = await res.json()
+        setResult({ success: false, message: data.error ?? 'Something went wrong. Please try again.' })
+      }
+    } catch {
+      setResult({ success: false, message: 'Unable to send. Please try again.' })
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -143,7 +142,7 @@ function ContactForm() {
               {result?.success ? (
                 <div className="py-12 text-center">
                   <p className="font-cormorant text-2xl text-text-primary italic mb-4">
-                    Message prepared.
+                    Message received.
                   </p>
                   <p className="font-dm-sans text-sm text-text-secondary leading-relaxed">
                     {result.message}
@@ -219,12 +218,16 @@ function ContactForm() {
                     />
                   </div>
 
+                  {result && !result.success && (
+                    <p className="font-dm-sans text-sm text-text-secondary">{result.message}</p>
+                  )}
+
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="w-full py-4 bg-accent-gold text-bg-primary font-dm-sans text-xs uppercase tracking-btn hover:bg-accent-gold-dark transition-colors duration-300 disabled:opacity-50"
                   >
-                    {isSubmitting ? 'Preparing...' : 'Send Message'}
+                    {isSubmitting ? 'Sending...' : 'Send Message'}
                   </button>
                 </form>
               )}
